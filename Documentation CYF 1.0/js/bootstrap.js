@@ -1551,10 +1551,11 @@ if (typeof jQuery === 'undefined') {
   }
 
   Tooltip.prototype.setContent = function () {
-    var $tip  = this.tip()
-    var title = this.getTitle()
+    var $tip   = this.tip()
+    var title  = this.getTitle()
+    var $inner = $tip.find('.tooltip-inner')
 
-    $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
+    $inner.text(title == null ? '' : title)
     $tip.removeClass('fade in top bottom left right')
   }
 
